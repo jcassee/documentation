@@ -484,7 +484,6 @@ notify_slack() {
   echo $(cat "/etc/slack.ignore" | grep "^${channel}$")
 
   if [ -f "/etc/slack.ignore" ]; then
-    boo=$(cat "/etc/slack.ignore" | grep "${channel}")
     echo "file exists"
   fi
 
