@@ -479,8 +479,13 @@ notify_slack() {
   # Check the blacklist for notifications
   echo "Checking blacklist."
   blacklisted=""
+  echo "blacklist: ${blacklisted}"
+  echo "channel:${channel}"
+  echo $(cat "/etc/slack.ignore")
+  echo $(cat "/etc/slack.ignore" | grep "^${channel}$")
   if [ -f "/etc/slack.ignore" ]; then
     blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
+    echo "${blacklisted}"
   fi
   echo "blacklisted: ${blacklisted}"
   if [ -z ${blacklisted} ]; then
