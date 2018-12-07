@@ -474,7 +474,6 @@ notify_slack() {
       text="${1}\nSite: ${url}"
     fi
 	attachment="\"fallback\": \"${text}\",\"color\": \"${status}\",\"text\": \"${text}\""
-  echo "notifying: ${channel} for ${text}"
 
   # Check the blacklist for notifications
   echo "Checking blacklist."
@@ -483,12 +482,16 @@ notify_slack() {
   echo "channel:${channel}"
   echo $(cat "/etc/slack.ignore")
   echo $(cat "/etc/slack.ignore" | grep "^${channel}$")
+
   if [ -f "/etc/slack.ignore" ]; then
+    echo "pulling blacklist from file"
     blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
-    echo "${blacklisted}"
+    echo "blacklist is: ${blacklisted}"
   fi
-  echo "blacklisted: ${blacklisted}"
-  if [ -z ${blacklisted} ]; then
+
+  echo "checking value for blacklist."
+
+  if [ -z "${blacklisted}" ]; then
     echo "User is not blacklist, notify."
     curl -X POST --data-urlencode "payload={\"attachments\": [{${attachment}}], \"channel\": \"${channel}\", \"link_names\": 1}" $(get_secret 'slack_url')
   else
