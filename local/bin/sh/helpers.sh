@@ -485,7 +485,8 @@ notify_slack() {
 
   if [ -f "/etc/slack.ignore" ]; then
     echo "file exists"
-    blacklist=$(cat "/etc/slack.ignore")
+    blacklisted=$(cat "/etc/slack.ignore")
+    echo ${blacklisted}
   fi
 
   echo "checking value for blacklist."
