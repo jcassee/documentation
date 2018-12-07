@@ -484,6 +484,8 @@ notify_slack() {
     if [ -z $(grep "^$channel$" /etc/slack.ignore) ]; then
       echo "User is not blacklist, notify."
       curl -X POST --data-urlencode "payload={\"attachments\": [{${attachment}}], \"channel\": \"${channel}\", \"link_names\": 1}" $(get_secret 'slack_url')
+    else
+      echo "${channel} was blacklisted. no notify."
     fi
   else
       echo "No blacklist defined: notifying."
