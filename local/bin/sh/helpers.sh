@@ -480,6 +480,9 @@ notify_slack() {
   blacklisted=""
 
   if [ -f "/etc/slack.ignore" ]; then
+    echo "^${channel}$"
+    echo $(grep "^${channel}$" /etc/slack.ignore)
+    echo $(printf $(grep "^${channel}$" /etc/slack.ignore))
     blacklisted=$(grep "^${channel}$" /etc/slack.ignore)
   fi
 
