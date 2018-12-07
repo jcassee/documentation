@@ -483,20 +483,21 @@ notify_slack() {
   echo $(cat "/etc/slack.ignore")
   echo $(cat "/etc/slack.ignore" | grep "^${channel}$")
 
-  if [ -f "/etc/slack.ignore" ]; then
-    echo "pulling blacklist from file"
-    # blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
-    echo "blacklist is: ${blacklisted}"
-  fi
-
-  echo "checking value for blacklist."
-
-  if [ -z "${blacklisted}" ]; then
-    echo "User is not blacklist, notify."
-    curl -X POST --data-urlencode "payload={\"attachments\": [{${attachment}}], \"channel\": \"${channel}\", \"link_names\": 1}" $(get_secret 'slack_url')
-  else
-    echo "Slack not notified because handle ${channel} is listed in /etc/slack.ignore"
-  fi
+#  if [ -f "/etc/slack.ignore" ]; then
+#    echo "pulling blacklist from file"
+#    blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
+#    blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
+#    echo "blacklist is: ${blacklisted}"
+#  fi
+#
+#  echo "checking value for blacklist."
+#
+#  if [ -z "${blacklisted}" ]; then
+#    echo "User is not blacklist, notify."
+#    curl -X POST --data-urlencode "payload={\"attachments\": [{${attachment}}], \"channel\": \"${channel}\", \"link_names\": 1}" $(get_secret 'slack_url')
+#  else
+#    echo "Slack not notified because handle ${channel} is listed in /etc/slack.ignore"
+#  fi
 }
 
 
