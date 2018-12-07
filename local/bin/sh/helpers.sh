@@ -483,14 +483,12 @@ notify_slack() {
     echo "^${channel}$"
     echo $(grep "^${channel}$" /etc/slack.ignore)
     echo $(printf $(grep "^${channel}$" /etc/slack.ignore))
-    blacklisted=$(grep "^${channel}$" /etc/slack.ignore)
-  fi
-
-  if [ -z "${blacklisted}" ]; then
-    echo "User is not blacklist, notify."
-    curl -X POST --data-urlencode "payload={\"attachments\": [{${attachment}}], \"channel\": \"${channel}\", \"link_names\": 1}" $(get_secret 'slack_url')
+    if [ -z $(grep "^$channel$" /etc/slack.ignore) ]; then
+      echo "User is not blacklist, notify."
+      curl -X POST --data-urlencode "payload={\"attachments\": [{${attachment}}], \"channel\": \"${channel}\", \"link_names\": 1}" $(get_secret 'slack_url')
+    fi
   else
-    echo "Slack not notified because handle ${channel} is listed in /etc/slack.ignore"
+      curl -X POST --data-urlencode "payload={\"attachments\": [{${attachment}}], \"channel\": \"${channel}\", \"link_names\": 1}" $(get_secret 'slack_url')
   fi
 }
 
