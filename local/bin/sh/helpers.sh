@@ -460,6 +460,7 @@ post_dd_metric() {
 
 
 notify_slack() {
+    echo "Start: notify slack."
     url="${LIVE_DOMAIN}"
 
     user=""
@@ -473,8 +474,10 @@ notify_slack() {
       text="${1}\nSite: ${url}"
     fi
 	attachment="\"fallback\": \"${text}\",\"color\": \"${status}\",\"text\": \"${text}\""
+  echo "notifying: ${channel} for ${text}"
 
   # Check the blacklist for notifications
+  echo "Checking blacklist."
   blacklisted=""
   if [ -f "/etc/slack.ignore" ]; then
     blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
