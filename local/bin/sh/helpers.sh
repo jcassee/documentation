@@ -485,7 +485,7 @@ notify_slack() {
 
   if [ -f "/etc/slack.ignore" ]; then
     echo "pulling blacklist from file"
-    blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
+    # blacklisted=$(cat "/etc/slack.ignore" | grep "^${channel}$")
     echo "blacklist is: ${blacklisted}"
   fi
 
