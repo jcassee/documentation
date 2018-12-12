@@ -148,4 +148,4 @@ Need help? Contact [Datadog Support][3].
 
 [1]: /crt/intake.logs.datadoghq.com.crt
 [2]: /crt/FULL_intake.logs.datadoghq.com.crt
-[3]: https://docs.datadoghq.com/help/
+[3]: https://docs.datadoghq.com/help

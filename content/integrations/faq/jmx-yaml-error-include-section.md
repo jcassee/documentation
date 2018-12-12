@@ -17,4 +17,4 @@ If you were to place the above code into the [Online YAML Parser][1] , you would
 In order to correct this, indent the lines below 'include' two spaces to the right as depicted below. This ensures that 'include' is not registered as null.
 {{< img src="integrations/faq/correct_jmx_include.png" alt="correct_jmx_include" responsive="true" >}}
 
-[1]: http://yaml-online-parser.appspot.com/
+[1]: http://yaml-online-parser.appspot.com

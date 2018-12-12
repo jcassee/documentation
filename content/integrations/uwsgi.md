@@ -73,4 +73,4 @@ Need help? Contact [Datadog Support][6].
 [3]: https://docs.datadoghq.com/agent/faq/agent-commands/#start-stop-restart-the-agent
 [4]: https://uwsgi-docs.readthedocs.io/en/latest/LogFormat.html#uwsgi-default-logging
 [5]: https://uwsgi-docs.readthedocs.io/en/latest/LogFormat.html#apache-style-combined-request-logging
-[6]: https://docs.datadoghq.com/help/
+[6]: https://docs.datadoghq.com/help

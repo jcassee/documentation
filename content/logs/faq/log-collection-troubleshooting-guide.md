@@ -118,7 +118,7 @@ config_providers:
 
 {{< partial name="whats-next/whats-next.html" >}}
 
-[1]: /logs/
+[1]: /logs
 [2]: /help
 [3]: https://codebeautify.org/yaml-validator
 [4]: https://docs.datadoghq.com/logs/log_collection/docker/?tab=containerinstallation#filter-containers

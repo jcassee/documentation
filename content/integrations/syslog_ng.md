@@ -91,4 +91,4 @@ Need help? Contact [Datadog Support][3].
 
 [1]: /crt/intake.logs.datadoghq.com.crt
 [2]: https://syslog-ng.com/documents/html/syslog-ng-ose-latest-guides/en/syslog-ng-ose-guide-admin/html/tlsoptions.html
-[3]: https://docs.datadoghq.com/help/
+[3]: https://docs.datadoghq.com/help

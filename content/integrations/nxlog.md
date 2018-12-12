@@ -126,4 +126,4 @@ Configure NXLog to gather logs from your host, containers, & services.
 Need help? Contact [Datadog Support][2].
 
 [1]: /crt/intake.logs.datadoghq.com.crt
-[2]: https://docs.datadoghq.com/help/
+[2]: https://docs.datadoghq.com/help

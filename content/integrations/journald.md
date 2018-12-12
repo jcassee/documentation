@@ -105,4 +105,4 @@ Learn more about infrastructure monitoring and all Datadog integrations on [our 
 [1]: https://app.datadoghq.com/account/settings#agent
 [2]: https://docs.datadoghq.com/agent/faq/agent-commands/#start-stop-restart-the-agent
 [3]: /help
-[4]: https://www.datadoghq.com/blog/
+[4]: https://www.datadoghq.com/blog

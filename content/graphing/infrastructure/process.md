@@ -21,14 +21,14 @@ Datadog's Process Monitoring allows for real-time visibility of the most granula
 
 ## Installation
 
-The following installation processes are for [Agent v6 only][6]. If you are still using Agent v5, [follow this specific installation process][7]
+The following installation processes are for [Agent v6 only][1]. If you are still using Agent v5, [follow this specific installation process][2]
 
 {{< tabs >}}
 {{% tab "Linux/Windows" %}}
 
-The process Agent is shipped by default with Agent 6 in Linux packages only. Refer to the instructions for standard [Agent installation][8] for platform-specific details.
+The process Agent is shipped by default with Agent 6 in Linux packages only. Refer to the instructions for standard [Agent installation][1] for platform-specific details.
 
-Once the Datadog Agent is installed, enable Live Processes collection by editing the [Agent main configuration file][9] by setting the following parameter to true:
+Once the Datadog Agent is installed, enable Live Processes collection by editing the [Agent main configuration file][2] by setting the following parameter to true:
 
 ```
 process_config:
@@ -45,16 +45,16 @@ Additionally, some configuration options may be set as environment variables.
 
 **Note**: options set as environment variables override the settings defined in the configuration file.
 
-After configuration is complete, [restart the Agent][10].  
+After configuration is complete, [restart the Agent][3].  
 
-[8]: https://app.datadoghq.com/account/settings#agent
-[9]: /agent/faq/agent-configuration-files/?tab=agentv6
-[10]: /agent/faq/agent-commands/?tab=agentv6#restart-the-agent
 
+[1]: https://app.datadoghq.com/account/settings#agent
+[2]: /agent/faq/agent-configuration-files/?tab=agentv6
+[3]: /agent/faq/agent-commands/?tab=agentv6#restart-the-agent
 {{% /tab %}}
 {{% tab "Docker" %}}
 
-Follow the instructions for the [Docker Agent][11], passing in the following attributes, in addition to any other custom settings as appropriate:
+Follow the instructions for the [Docker Agent][1], passing in the following attributes, in addition to any other custom settings as appropriate:
 
 ```
 -v /etc/passwd:/etc/passwd:ro
@@ -66,12 +66,12 @@ Follow the instructions for the [Docker Agent][11], passing in the following att
 * To collect container information in the standard install, the `dd-agent` user needs to have permissions to access `docker.sock`.
 * Running the Agent as container still allows you to collect host processes.
 
-[11]: /agent/basic_agent_usage/docker/#run-the-docker-agent
 
+[1]: /agent/basic_agent_usage/docker/#run-the-docker-agent
 {{% /tab %}}
 {{% tab "Kubernetes" %}}
 
-In the [dd-agent.yaml][12] manifest used to create the daemonset, add the following environmental variables, volume mount, and volume:
+In the [dd-agent.yaml][1] manifest used to create the daemonset, add the following environmental variables, volume mount, and volume:
 
 ```
  env:
@@ -87,14 +87,14 @@ In the [dd-agent.yaml][12] manifest used to create the daemonset, add the follow
       name: passwd    
 ```
 
-Refer to the standard [DaemonSet installation][13] and the [Docker Agent][11] information pages for further documentation.
+Refer to the standard [DaemonSet installation][2] and the [Docker Agent][3] information pages for further documentation.
 
 **Note**: Running the Agent as container still allows you to collect host processes.
 
-[11]: /agent/basic_agent_usage/docker/#run-the-docker-agent
-[12]: https://app.datadoghq.com/account/settings#agent/kubernetes
-[13]: /integrations/kubernetes/#installation-via-daemonsets-kubernetes-110
 
+[1]: https://app.datadoghq.com/account/settings#agent/kubernetes
+[2]: /integrations/kubernetes/#installation-via-daemonsets-kubernetes-110
+[3]: /agent/basic_agent_usage/docker/#run-the-docker-agent
 {{% /tab %}}
 {{< /tabs >}}
 
@@ -140,7 +140,7 @@ Processes and containers are, by their nature, extremely high cardinality object
 
 ### Tagging
 
-[Tagging][15] makes navigation easy. In addition to all existing host-level tags, processes are tagged by `user`.
+[Tagging][3] makes navigation easy. In addition to all existing host-level tags, processes are tagged by `user`.
 
 Furthermore, processes in ECS containers are also tagged by:
 
@@ -180,7 +180,7 @@ Perhaps this one is less exciting after redaction.
 
 Use the ScatterPlot analytic to compare two metrics with one another in order to better understand the performance of your containers.
 
-To access the ScatterPlot analytic [in the Processes page][16] click on the *Show Summary graph* button the select the ScatterPlot tab:
+To access the ScatterPlot analytic [in the Processes page][4] click on the *Show Summary graph* button the select the ScatterPlot tab:
 
 {{< img src="graphing/infrastructure/process/scatterplot_selection.png" alt="scatterplot selection" responsive="true" style="width:60%;">}}
 
@@ -196,7 +196,7 @@ The query at the top of the Scatterplot analytic allows you to control your Scat
 
 ## Enriched Live Containers view
 
-Live Processes adds extra visibility to your container deployments. The [Live Containers][14] feature gives you a similarly comprehensive view of your container and orchestrator environment. When Live Processes is enabled, the process tree for each container is included in the container inspection panel on that page.
+Live Processes adds extra visibility to your container deployments. The [Live Containers][5] feature gives you a similarly comprehensive view of your container and orchestrator environment. When Live Processes is enabled, the process tree for each container is included in the container inspection panel on that page.
 
 {{< img src="graphing/infrastructure/process/containerinspect.png" alt="container inspect" responsive="true" style="width:80%;">}}
 
@@ -217,12 +217,8 @@ While actively working with the Live Processes, metrics are collected at 2s reso
 
 {{< partial name="whats-next/whats-next.html" >}}
 
-[1]: https://app.datadoghq.com/account/settings#agent
-[4]: /integrations/kubernetes/
-[5]: https://github.com/DataDog/docker-dd-agent
-[6]: /agent
-[7]: /agent/faq/agent-5-process-collection
-[12]: https://app.datadoghq.com/account/settings#agent/kubernetes
-[14]: https://docs.datadoghq.com/infrastructure/livecontainers/
-[15]: /tagging/
-[16]: https://app.datadoghq.com/process
+[1]: /agent
+[2]: /agent/faq/agent-5-process-collection
+[3]: /tagging
+[4]: https://app.datadoghq.com/process
+[5]: https://docs.datadoghq.com/infrastructure/livecontainers

@@ -15,18 +15,18 @@ further_reading:
 
 ## Introduction
 
-[Datadog Live Containers][3] enable real-time visibility into all containers across your environment.
+[Datadog Live Containers][1] enable real-time visibility into all containers across your environment.
 
 Taking inspiration from bedrock tools like *htop* and *ctop*, Live Containers give you complete coverage of your container infrastructure, in a continuously updated table with resource metrics at two-second resolution and faceted search.
-Coupled with Integrations for [Docker][4], [Kubernetes][5], [ECS][6], and other container technologies, plus built-in tagging of dynamic components, this new Live Container view provides a detailed overview of your containers' health, resource consumption, and deployment in real time:
+Coupled with Integrations for [Docker][2], [Kubernetes][3], [ECS][4], and other container technologies, plus built-in tagging of dynamic components, this new Live Container view provides a detailed overview of your containers' health, resource consumption, and deployment in real time:
 
 {{< img src="graphing/infrastructure/livecontainers/LiveContainersWithSummaries.png" alt="Live containers with summaries" responsive="true" >}}
 
 ## Installation
 
-After deploying the [Docker Agent][7], no other configuration is necessary.
+After deploying the [Docker Agent][5], no other configuration is necessary.
 
-Note that for collecting Container information in the standard install rather than with the [Docker Agent][7], the `dd-agent` user needs to have permissions to access **docker.sock**.
+Note that for collecting Container information in the standard install rather than with the [Docker Agent][5], the `dd-agent` user needs to have permissions to access **docker.sock**.
 
 ### Include/Exclude containers
 
@@ -54,9 +54,9 @@ Containers are, by their nature, extremely high cardinality objects. Datadog's f
 
 ### Tagging
 
-Containers are [tagged][8] with all existing host-level tags.  We also tag with metadata associated with individual containers.
+Containers are [tagged][6] with all existing host-level tags.  We also tag with metadata associated with individual containers.
 
-All containers are tagged by `image_name`, and additionally, we include integrations with popular orchestrators, such as [ECS][6] and [Kubernetes][5], which provide further container-level tags.  We also decorate each container with Docker, ECS, or Kubernetes icons so you can tell which are being orchestrated at a glance.
+All containers are tagged by `image_name`, and additionally, we include integrations with popular orchestrators, such as [ECS][4] and [Kubernetes][3], which provide further container-level tags.  We also decorate each container with Docker, ECS, or Kubernetes icons so you can tell which are being orchestrated at a glance.
 
 ECS Containers are tagged by:
 
@@ -99,7 +99,7 @@ It would be easy to pivot by ECS `ecs_task_name` and `ecs_task_version` and unde
 
 Use the ScatterPlot analytic to compare two metrics with one another in order to better understand the performance of your containers.
 
-To access the ScatterPlot analytic [in the Containers page][3] click on the *Show Summary graph* button the select the ScatterPlot tab:
+To access the ScatterPlot analytic [in the Containers page][1] click on the *Show Summary graph* button the select the ScatterPlot tab:
 
 {{< img src="graphing/infrastructure/livecontainers/scatterplot_selection.png" alt="scatterplot selection" responsive="true" style="width:60%;">}}
 
@@ -124,20 +124,19 @@ While actively working with the Containers page, metrics are collected at 2s res
 
 - Real-time (2s) data collection is turned off after 30 minutes. To resume real-time collection, refresh the page.
 
-- RBAC settings can restrict Kubernetes metadata collection. Refer to the [RBAC entites for the Datadog Agent][2].
+- RBAC settings can restrict Kubernetes metadata collection. Refer to the [RBAC entites for the Datadog Agent][7].
 
 - In Kubernetes the `health` value is the containers' readiness probe, not it's liveness probe.
 
-[1]: https://github.com/DataDog/docker-dd-agent
-[2]: https://gist.github.com/hkaj/404385619e5908f16ea3134218648237
 
 ## Further Reading
 
 {{< partial name="whats-next/whats-next.html" >}}
 
-[3]: https://app.datadoghq.com/containers
-[4]: /integrations/docker_daemon
-[5]: /integrations/kubernetes
-[6]: /integrations/amazon_ecs
-[7]: /agent/basic_agent_usage/docker/#run-the-docker-agent
-[8]: /tagging
+[1]: https://app.datadoghq.com/containers
+[2]: /integrations/docker_daemon
+[3]: /integrations/kubernetes
+[4]: /integrations/amazon_ecs
+[5]: /agent/basic_agent_usage/docker/#run-the-docker-agent
+[6]: /tagging
+[7]: https://gist.github.com/hkaj/404385619e5908f16ea3134218648237

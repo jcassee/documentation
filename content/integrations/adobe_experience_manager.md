@@ -67,4 +67,4 @@ Need help? Contact [Datadog support][4].
 [1]: https://app.datadoghq.com/account/settings#agent
 [2]: /agent/faq/agent-configuration-files/?tab=agentv6#agent-configuration-directory
 [3]: /agent/faq/agent-commands/#restart-the-agent
-[4]: https://docs.datadoghq.com/help/
+[4]: https://docs.datadoghq.com/help

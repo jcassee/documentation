@@ -118,9 +118,9 @@ agent -c /app/.apt/etc/datadog-agent/datadog.yaml flare
 
 Visit the [Github project page][6] for more information and to view the source code.
 
-[1]: http://docs.datadoghq.com/libraries/
+[1]: http://docs.datadoghq.com/libraries
 [2]: https://app.datadoghq.com/account/settings#api
-[3]: http://docs.datadoghq.com/guides/tagging/
+[3]: http://docs.datadoghq.com/guides/tagging
 [4]: https://help.datadoghq.com/hc/en-us/articles/204588979-How-to-graph-percentiles-in-Datadog
-[5]: https://docs.datadoghq.com/tracing/environments/
+[5]: https://docs.datadoghq.com/tracing/environments
 [6]: https://github.com/DataDog/heroku-buildpack-datadog

@@ -9,11 +9,11 @@ aliases:
 description: Visualize your data to gain insight
 ---
 
-Graphs are the window onto your monitored systems. Most of the times that you visit Datadog, you look at [dashboards][8] made up of graphs. Other times you see email notifications that include a graph of some fluctuation in the system. And yet other times you see graphs in your Slack, HipChat, and other chat clients documenting the changes in metrics over the course of time. Graphs are at the heart of monitoring and observability, so it is essential to understand how to define great graphs.
+Graphs are the window onto your monitored systems. Most of the times that you visit Datadog, you look at [dashboards][1] made up of graphs. Other times you see email notifications that include a graph of some fluctuation in the system. And yet other times you see graphs in your Slack, HipChat, and other chat clients documenting the changes in metrics over the course of time. Graphs are at the heart of monitoring and observability, so it is essential to understand how to define great graphs.
 
 ## The graphing editor
 
-There are two ways to interact with the Graphing Editor: using the GUI (the default method) and writing JSON (the more complete method). This page covers using the GUI. To learn more about using JSON, visit the [JSON Graphing Primer Page][1]
+There are two ways to interact with the Graphing Editor: using the GUI (the default method) and writing JSON (the more complete method). This page covers using the GUI. To learn more about using JSON, visit the [JSON Graphing Primer Page][2]
 
 On each graph there is a pencil icon that opens the graph editor.
 
@@ -31,27 +31,27 @@ When you first open the graphing editor window, you are on the **Edit** tab. Her
 
 Configuring a graph is a multi-step process: 
 
-1. [Choose the metric to graph][9]
-2. [Select the visualization][10]
-3. [Filter][11] 
-4. [Aggregate and Rollup][12] 
-5. [Apply additional functions][13]
-6. [Enhance your graphs][14]
-7. [Title the graph][15]
+1. [Choose the metric to graph][3]
+2. [Select the visualization][4]
+3. [Filter][5] 
+4. [Aggregate and Rollup][6] 
+5. [Apply additional functions][7]
+6. [Enhance your graphs][8]
+7. [Title the graph][9]
 
 ## Choose the metric to graph
 
-When you create a graph, you probably have a metric in mind that you want to show. You can select that in the first dropdown in the **Choose metrics and events** section. If you aren't sure exactly which metric to use, you might want to start with the [Metrics Explorer][2] or a [Notebook][7]. You can also look in the [Metrics Summary][3].
+When you create a graph, you probably have a metric in mind that you want to show. You can select that in the first dropdown in the **Choose metrics and events** section. If you aren't sure exactly which metric to use, you might want to start with the [Metrics Explorer][10] or a [Notebook][11]. You can also look in the [Metrics Summary][12].
 
 The Metrics Explorer allows you to play around with different graph settings in a more ad-hoc way. The Metrics Summary allows to learn more about the type of metric as well as setting the default unit for a metric.
 
 ## Select your visualization
 
-Once you have a metric in mind to display in your graph, select your visualization. Check the [list of all visualizations][4].
+Once you have a metric in mind to display in your graph, select your visualization. Check the [list of all visualizations][13].
 
 ## Filter
 
-Now that you have the metric and a visualization in place, you can filter down the hosts to be graphed. To the right of the metric is a dropdown which by default says *(everywhere)*. Click this and choose the tag(s) you want to filter by. To learn more about tags, refer to the [Tagging documentation][5].
+Now that you have the metric and a visualization in place, you can filter down the hosts to be graphed. To the right of the metric is a dropdown which by default says *(everywhere)*. Click this and choose the tag(s) you want to filter by. To learn more about tags, refer to the [Tagging documentation][14].
 
 ## Aggregate and rollup
 ### Aggregation method
@@ -79,11 +79,11 @@ When switching to the JSON view, the query looks like this:
 
     "q": "avg:system.disk.free{*}.rollup(avg, 60)"
 
-For more about using the JSON view, visit the [JSON Graphing Primer page][1].
+For more about using the JSON view, visit the [JSON Graphing Primer page][2].
 
 ## Advanced graphing
 
-Depending on your analysis needs, you may choose to apply other mathematical functions to the query. Examples include rates and derivatives, smoothing, and more. For a list of available functions [click here][6]
+Depending on your analysis needs, you may choose to apply other mathematical functions to the query. Examples include rates and derivatives, smoothing, and more. For a list of available functions [click here][15]
 
 The Datadog UI also supports the ability to graph your metrics with various arithmetic options. Use any of: `+`, `-`, `/`, `*` to modify the values that are displayed on your graphs.
 This syntax allows for both integer values as well as arithmetic using multiple metrics.
@@ -157,13 +157,13 @@ Note: as the mathematical log function doesn't accept negative values, the Datad
 
 ### Overlay events for additional context
 
-Add events from related systems to add even more context to your graph. For example, you can add Github commits, Jenkins deploys, or Docker creation events. Click the Overlay Events button and enter a query to find and display your events. Use the same query format as for [the event stream][17], for example: 
+Add events from related systems to add even more context to your graph. For example, you can add Github commits, Jenkins deploys, or Docker creation events. Click the Overlay Events button and enter a query to find and display your events. Use the same query format as for [the event stream][16], for example: 
 
 | Query                  | Description                                               |
 | -----                  | ----                                                      |
 | `sources:jenkins`      | Shows all events from the Jenkins source                  |
 | `tag:role:web`         | Shows all events with the tag `role:web`                  |
-| `tags:$<TEMPLATE_VAR>` | Shows all events from the [selected `<TEMPLATE_VAR>`][18] |
+| `tags:$<TEMPLATE_VAR>` | Shows all events from the [selected `<TEMPLATE_VAR>`][17] |
 
 
 
@@ -171,27 +171,27 @@ Add events from related systems to add even more context to your graph. For exam
 
 ## Create a title
 
-If you don't enter a title, we automatically generate a title based on the selections you have made. But it may be more useful to the users of the [dashboard][16] to create a title that more aptly describes the purpose of the graph. Linking the technical purpose to the business benefits adds even more value.
+If you don't enter a title, we automatically generate a title based on the selections you have made. But it may be more useful to the users of the [dashboard][18] to create a title that more aptly describes the purpose of the graph. Linking the technical purpose to the business benefits adds even more value.
 
 ## Save
 
 The final step is to click Save. You can always come back in to the editor and tweak the graph further depending on your needs.
 
-[1]: /graphing/graphing_json/
-[2]: https://app.datadoghq.com/metric/explorer/
-[3]: https://app.datadoghq.com/metric/summary/
-[4]: /graphing/dashboards/widgets/
-[5]: /tagging/
-[6]: /graphing/functions/
-[7]: https://app.datadoghq.com/notebook/list
-[8]: /graphing/dashboards
-[9]: /graphing/#choose-the-metric-to-graph
-[10]: /graphing/#select-your-visualization
-[11]: /graphing/#filter
-[12]: /graphing/#aggregate-and-rollup
-[13]: /graphing/#advanced-graphing
-[14]: /graphing/#graphs-enhancement
-[15]: /graphing/#create-a-title
-[16]: /graphing/dashboards
-[17]: /graphing/event_stream
-[18]: /graphing/dashboards/#editing-template-variables
+[1]: /graphing/dashboards
+[2]: /graphing/graphing_json
+[3]: /graphing/#choose-the-metric-to-graph
+[4]: /graphing/#select-your-visualization
+[5]: /graphing/#filter
+[6]: /graphing/#aggregate-and-rollup
+[7]: /graphing/#advanced-graphing
+[8]: /graphing/#graphs-enhancement
+[9]: /graphing/#create-a-title
+[10]: https://app.datadoghq.com/metric/explorer
+[11]: https://app.datadoghq.com/notebook/list
+[12]: https://app.datadoghq.com/metric/summary
+[13]: /graphing/dashboards/widgets
+[14]: /tagging
+[15]: /graphing/functions
+[16]: /graphing/event_stream
+[17]: /graphing/dashboards/#editing-template-variables
+[18]: /graphing/dashboards

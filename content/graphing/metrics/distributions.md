@@ -20,13 +20,13 @@ Distributions are a [metric type][1] that can be thought of as a global version 
 
 Global distributions are designed to instrument logical objects, like services, independently from the underlying hosts and provide insight into metric behavior across your infrastructure .
 
-Check out the [Developer Tools section][5] for more information on the internals of this metric type. Otherwise, read on to learn how to manipulate and visualize Distributions in the interface.
+Check out the [Developer Tools section][3] for more information on the internals of this metric type. Otherwise, read on to learn how to manipulate and visualize Distributions in the interface.
 
 ## Aggregations 
 
 The new tagging workflow for Distributions allows you to define which aggregations are available in queries. Initially, Datadog maintain a single timeseries, for `*` (all points), and otherwise ignore all tags.  Manually aggregate your metric based on sets of tags, chosen from the list of tags normally available. For convenience, Datadog also creates aggregations for every combination of up to four custom tags applied to each metric.
 
-With the [distribution UI][3], create additional aggregate timeseries by applying sets of tags to a metric, for which a timeseries is created for every combination of tag values within the set. 
+With the [distribution UI][4], create additional aggregate timeseries by applying sets of tags to a metric, for which a timeseries is created for every combination of tag values within the set. 
 
 **Sets of tags are limited to groups of four.**
 
@@ -46,7 +46,7 @@ Additionally, this metric has been tagged with `Status`, which has 2 values: `St
 
 ##### Scenario 1
 
-By default, Datadog creates aggregations for `my.service.latency` for [each combination of custom metric][4] tags `Status` and `Result`.  
+By default, Datadog creates aggregations for `my.service.latency` for [each combination of custom metric][5] tags `Status` and `Result`.  
 
 You could then query, for example `{my.service.latency for Status:success, Result:closed}`, but not `{my.service.latency for Availability-Zone: US-East-1a}`
 
@@ -92,6 +92,6 @@ The following gif demonstrates inspecting the aggregations created for a metric,
 
 [1]: /developers/metrics
 [2]: /developers/metrics/histograms
-[3]: https://app.datadoghq.com/metric/distribution_metrics
-[4]: /developers/metrics/custom_metrics
-[5]: /developers/metrics/distributions
+[3]: /developers/metrics/distributions
+[4]: https://app.datadoghq.com/metric/distribution_metrics
+[5]: /developers/metrics/custom_metrics

@@ -50,13 +50,13 @@ To add Dashboards to your Dashboard List, select their corresponding check boxes
 
 ## Create a Dashboard
 
-To create a Dashboard, click on the *New Dashboard* button in the upper right corner of the page. Datadog will then ask you to choose between creating a [Timeboard][3] or a [Screenboard][4] Select which of these you would prefer to create after clicking 'New Dashboard' in the 'Dashboards' dropdown.
+To create a Dashboard, click on the *New Dashboard* button in the upper right corner of the page. Datadog will then ask you to choose between creating a [Timeboard][2] or a [Screenboard][3] Select which of these you would prefer to create after clicking 'New Dashboard' in the 'Dashboards' dropdown.
 
 {{< img src="graphing/dashboards/board_selection.jpg" alt="Dashboard selection" responsive="true" style="width:70%;">}}
 
 ### What is the difference between a Screenboard and a Timeboard?
 
-You have the capability to create and customize two types of Dashboards: [Screenboards][5] and [Timeboards][6]. To more clearly understand the differences between the two, consider the following:
+You have the capability to create and customize two types of Dashboards: [Screenboards][4] and [Timeboards][5]. To more clearly understand the differences between the two, consider the following:
 
 |                                | Timeboards                       | Screenboards                                      |
 | ---                            | ------------                     | -------------                                     |
@@ -70,12 +70,11 @@ You have the capability to create and customize two types of Dashboards: [Screen
 
 {{< partial name="whats-next/whats-next.html" >}}
 
-[1]: /graphing/
-[2]: /graphing/event_stream/
-[3]: /graphing/dashboards/timeboard/
-[4]: /graphing/dashboards/screenboard/
-[5]: /graphing/dashboards/screenboard
-[6]: /graphing/dashboards/timeboard
 
 
 
+[1]: /graphing
+[2]: /graphing/dashboards/timeboard
+[3]: /graphing/dashboards/screenboard
+[4]: /graphing/dashboards/screenboard
+[5]: /graphing/dashboards/timeboard

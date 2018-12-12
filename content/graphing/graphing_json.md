@@ -56,7 +56,7 @@ In other words at the highest level the JSON structure is a dictionary with two,
 The general format for a series is:
 
     "requests": [
-        {
+        {ÿ
           "q": "function(aggregation method:metric{scope} [by {group}])"
         }
     ]
@@ -139,7 +139,7 @@ apples by oranges.
 You can overlay any event from Datadog. The general format is:
 
     "events": [
-      {
+      {ÿ
         "q": "search query"
       }
     ]
@@ -147,7 +147,7 @@ You can overlay any event from Datadog. The general format is:
 For instance, to indicate that you want events for host X and tag Y:
 
     "events": [
-      {
+      {ÿ
         "q": "host:X tags:Y"
       }
     ]
@@ -155,7 +155,7 @@ For instance, to indicate that you want events for host X and tag Y:
 or if you're looking to display all errors:
 
     "events": [
-      {
+      {ÿ
         "q": "status:error"
       }
     ]
@@ -185,13 +185,13 @@ The Time Series can be further broken down to:
 The representation is automatically derived from having multiple `requests` values.
 
     "requests": [
-        {
+        {ÿ
           "q": "metric1{scope}"
         },
-        {
+        {ÿ
           "q": "metric2{scope}"
         },
-        {
+        {ÿ
           "q": "metric3{scope}"
         }
       ]
@@ -203,7 +203,7 @@ The representation is automatically derived from having multiple `requests` valu
 In the case of related Time Series, you can easily draw them as stacked areas by using the following syntax:
 
     "requests": [
-        {
+        {ÿ
           "q": "metric1{scope}, metric2{scope}, metric3{scope}"
         }
     ]
@@ -219,7 +219,7 @@ applies to more than 1 host you see that ingress and egress traffic is nicely st
 Here's how to do it for any metric:
 
     "requests" [
-      {
+      {ÿ
          "q": "system.net.bytes_rcvd{some_tag, device:eth0} by {host}"
       }
     ]
@@ -227,7 +227,7 @@ Here's how to do it for any metric:
 Note that in this case you can only have 1 query. But you can also split by device, or a combination of both:
 
     "requests" [
-      {
+      {ÿ
          "q": "system.net.bytes_rcvd{some_tag} by {host,device}"
       }
     ]
@@ -251,31 +251,31 @@ There are four configuration settings:
 
 Examples:
 
-    "yaxis": {
+    "yaxis": {ÿ
         "min": "auto",
         "max": 200,
         "scale": "log"
     }
 
-    "yaxis": {
+    "yaxis": {ÿ
         "min": 200,
         "scale": "sqrt"
     }
 
-    "yaxis": {
+    "yaxis": {ÿ
         "min": 9000,
         "max": 10000
     }
 
-    "yaxis": {
+    "yaxis": {ÿ
         "scale": "pow0.1"
     }
 
-    "yaxis": {
+    "yaxis": {ÿ
         "scale": "pow3"
     }
 
-    "yaxis": {
+    "yaxis": {ÿ
         "units": "true"
     }
 
@@ -289,18 +289,18 @@ To begin, there is a simple configuration where you specify an absolute value or
 
 Examples:
 
-    "yaxis": {
+    "yaxis": {ÿ
         "filter": 30 // all top 30 values do not appear
     }
 
-    "yaxis": {
+    "yaxis": {ÿ
         "filter": "5%" // the top 5% of that data do not appear
     }
 
 Advanced configuration works the same way as simple configuration, with the added flexibility of configuring the lower or the upper or both parts of the graph. For example, the following configuration limits the graph to data points that are not in the bottom 10% nor in the top 30%.
 
-    "yaxis": {
-        "filter": {
+    "yaxis": {ÿ
+        "filter": {ÿ
             "top": "30%",
             "bottom": "10%"
         }
@@ -308,16 +308,16 @@ Advanced configuration works the same way as simple configuration, with the adde
 
 The following shows all data except those with values higher than 15:
 
-    "yaxis": {
-        "filter": {
+    "yaxis": {ÿ
+        "filter": {ÿ
             "top": 15
         }
     }
 
 The following hides data points below 2:
 
-    "yaxis": {
-        "filter": {
+    "yaxis": {ÿ
+        "filter": {ÿ
             "bottom": 2
         }
     }
@@ -405,7 +405,7 @@ Here is an example using the ```week_before()``` function:
 }
 ```
 
-[1]: /graphing/
-[2]: /graphing/functions/
-[3]: https://app.datadoghq.com/metric/summary
 
+[1]: /graphing
+[2]: /graphing/functions
+[3]: https://app.datadoghq.com/metric/summary
